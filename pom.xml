@@ -6,6 +6,7 @@
   <artifactId>payments-demo-quarkus-app</artifactId>
   <version>1.1.0</version>
   <properties>
+    <byte-buddy.version>1.15.4</byte-buddy.version>
     <cargo-core-api-container.version>1.10.9</cargo-core-api-container.version>
     <compiler-plugin.version>3.11.0</compiler-plugin.version>
     <maven.compiler.release>17</maven.compiler.release>
@@ -114,6 +115,18 @@
       <groupId>jakarta.ws.rs</groupId>
       <artifactId>jakarta.ws.rs-api</artifactId>
       <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>net.bytebuddy</groupId>
+      <artifactId>byte-buddy</artifactId>
+      <version>${byte-buddy.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.bytebuddy</groupId>
+      <artifactId>byte-buddy-agent</artifactId>
+      <version>${byte-buddy.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
