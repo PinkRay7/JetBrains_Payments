@@ -107,8 +107,6 @@ public class PaymentsTestCombine {
 
         paymentIds.add(createdPaymentId);
 
-        System.out.println(createdPaymentId);
-
         // Verify the payment
         given()
                 .header(authHeader)
@@ -126,6 +124,7 @@ public class PaymentsTestCombine {
 
     @Test
     public void testCreateMultiplePaymentsAndVerify() {
+        // Create 3 payments
         int numberOfPayments = 3;
 
         // Create multiple payments using a loop
@@ -145,7 +144,6 @@ public class PaymentsTestCombine {
                 .response();
 
         List<Map<String, Object>> payments = allPayments.jsonPath().getList("$");
-        System.out.println(payments);
 
         // Verify for each created payment
         for (int i = 0; i < numberOfPayments; i++) {
